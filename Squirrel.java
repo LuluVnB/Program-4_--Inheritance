@@ -47,12 +47,12 @@ public class Squirrel extends Racer
         case 1: // for moving left, but it doesn't make sense so we don't want that
             break;
         case 2: // move up
-            if(distance < 7){
+            if(distance < 7){  //this is to limit how chaotic the squirrel moves
                 setY(getY() - distance);
             }
             break;
         case 3: // move down
-            if(distance < 7){
+            if(distance < 7){  //this is also to limit how chaotic the squirrel moves
                 setY(getY() + distance);
             }
             break;
@@ -68,21 +68,22 @@ public class Squirrel extends Racer
      int startX = getX( );
      int startY = getY( );
      
-     	g.setColor( new Color( 165, 42, 42 ) ); // brown
+     	g.setColor( new Color( 200, 64, 0 ) ); // brown
 
      //body
-     g.fillOval( startX - 30, startY, 25, 15 );
+     g.fillOval( startX - 30, startY, 10,20  );
 
      //head
-     g.fillOval( startX - 10, startY + 5,  15, 10 );
+    //  g.fillOval( startX - 10, startY + 5,  15, 10 );
+     
 
      //flatten bottom
-      g.clearRect( startX - 30, startY + 11, 35, 4 );
+    //   g.clearRect( startX - 30, startY + 11, 35, 4 );
 
      //feet
-     g.setColor( new Color( 34, 139, 34 ) );  // brown
-     g.fillOval( startX - 27, startY + 10,  5, 5 );
-     g.fillOval( startX - 13, startY + 10, 5, 5 );
+    //  g.setColor( new Color( 34, 139, 34 ) );  // brown
+    //  g.fillOval( startX - 27, startY + 10,  1, 1 );
+    //  g.fillOval( startX - 13, startY + 10, 1, 1 );
    }
    
    private void setRandAndSpeed( ) {
