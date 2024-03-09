@@ -91,6 +91,11 @@ public class Race extends JFrame {
 					racerList.add(hare);
 					yPos += RACER_SPACE;
 					break;
+				case 'S':
+				case 's':
+					Squirrel squirrel = new Squirrel("Squirrel", START_LINE, yPos);
+					racerList.add(squirrel);
+					yPos += RACER_SPACE;
 				default:
 					JOptionPane.showMessageDialog(this, "Please input the letter 'T' or 'H'");
 			}
