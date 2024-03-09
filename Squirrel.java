@@ -75,6 +75,13 @@ public class Squirrel extends Racer
 
      //head
      g.fillOval( startX - 30, startY - 5,  10, 10);
+
+     //ears
+     g.fillArc(startX - 32, startY - 8, 15, 15, 115, 40);
+     g.fillArc(startX - 32, startY - 8, 15, 15, 20, 40);
+     
+
+     //tail
      
 
      //flatten bottom
