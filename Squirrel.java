@@ -70,23 +70,42 @@ public class Squirrel extends Racer
      
      
      //tail
-     g.setColor(new Color(140, 90, 0));
+     g.setColor(new Color(140, 90, 0)); //darker brown
      g.fillArc(startX - 40, startY, 40, 40, 40, 30);
 
 
-    
-     g.setColor( new Color( 200, 64, 0 ) ); // brown
-
 
      //body
+     g.setColor( new Color( 180, 64, 0 ) ); // brown
      g.fillOval( startX - 30, startY, 15,25);
+     g.setColor( new Color( 180, 130, 0 ) ); // lighter brown for stomache 
+     g.fillOval( startX - 28, startY + 6, 10,16);
+     
+    //arms
+    g.setColor(new Color(100, 100, 50)); //darker brown
+    g.fillOval(startX - 21, startY + 6, 5, 10);
+    g.fillOval(startX - 29, startY + 6, 5, 10);
+
+
+
 
      //head
+     g.setColor( new Color( 180, 64, 0 ) ); // brown
      g.fillOval( startX - 29, startY - 7,  13, 13);
 
+     //eyes
+     g.setColor(new Color(0, 0, 0)); //black
+     g.fillOval(startX - 26, startY - 3, 3, 3);
+     g.fillOval(startX - 20, startY - 3, 3, 3);
+
+
      //ears
+     g.setColor( new Color( 180, 64, 0 ) ); // brown
      g.fillArc(startX - 30, startY - 10, 15, 15, 115, 40);
      g.fillArc(startX - 30, startY - 10, 15, 15, 20, 40);
+
+     
+
      
 
 
