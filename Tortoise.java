@@ -51,6 +51,10 @@ public class Tortoise extends Racer
      
      	g.setColor( new Color( 34, 139, 34 ) ); // dark green
 
+      if(this.isWinner){
+        morph(g);
+      }
+
      //body
      g.fillOval( startX - 30, startY, 25, 15 );
 
@@ -70,5 +74,9 @@ public class Tortoise extends Racer
       // percentage of time (between 90 - 99%) that this tortoise moves each turn
       rand = new Random( );
       speed = rand.nextInt( 10 ) + 90;
+   }
+
+   public void morph(Graphics g){
+    g.fillOval(0, 0, 0, 0);
    }
 }

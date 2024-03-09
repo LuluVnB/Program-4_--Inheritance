@@ -1,4 +1,4 @@
-/**  Squirrel class
+/**  Fish class
 *    inherits from abstract Racer class
 */
 
@@ -6,14 +6,14 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.util.Random;
 
-public class Squirrel extends Racer
+public class Fish extends Racer
 {
 	private int speed;
 	private Random rand;
 
    /** Default Constructor: calls Racer default constructor
    */
-   public Squirrel( )
+   public Fish( )
    {
      super( );
      setRandAndSpeed();
@@ -24,15 +24,15 @@ public class Squirrel extends Racer
    *    @param rX    x position, passed to Racer constructor
    *    @param rY    y position, passed to Racer constructor
    */
-   public Squirrel(String rID, int rX, int rY )
+   public Fish(String rID, int rX, int rY )
    {
      super( rID, rX, rY );
      setRandAndSpeed();
    }
 
    /** move:  calculates the new x position for the racer
-   *   Squirrel move characteristics: "speedy and erratic"
-   *      random direction movements (up, down, right)
+   *   Fish move characteristics: "wavy"
+   *      
    */
    public void move( )
    {
@@ -47,12 +47,12 @@ public class Squirrel extends Racer
         case 1: // for moving left, but it doesn't make sense so we don't want that
             break;
         case 2: // move up
-            if(distance < 7){  //this is to limit how chaotic the squirrel moves
+            if(distance < 7){  //this is to limit how chaotic the fish moves
                 setY(getY() - distance);
             }
             break;
         case 3: // move down
-            if(distance < 7){  //this is also to limit how chaotic the squirrel moves
+            if(distance < 7){  //this is also to limit how chaotic the fish moves
                 setY(getY() + distance);
             }
             break;
@@ -60,7 +60,7 @@ public class Squirrel extends Racer
        }
    }
 
-   /** draw: draws the Squirrel at current (x, y) coordinate
+   /** draw: draws the Fish at current (x, y) coordinate
    *       @param g   Graphics context
    */
    public void draw( Graphics g )
@@ -117,10 +117,11 @@ public class Squirrel extends Racer
 
 
 
+
    }
    
    private void setRandAndSpeed( ) {
-      // percentage of time (between 90 - 99%) that this squirrel moves each turn
+      // percentage of time (between 90 - 99%) that this fish moves each turn
       rand = new Random( );
       speed = rand.nextInt( 10 ) + 90;
    }

@@ -97,6 +97,12 @@ public class Race extends JFrame {
 					racerList.add(squirrel);
 					yPos += RACER_SPACE;
 					break;
+				case 'F':
+				case 'f':
+				Fish fish = new Fish("Fish", START_LINE, yPos);
+				racerList.add(fish);
+				yPos += RACER_SPACE;
+				break;					
 				default:
 					JOptionPane.showMessageDialog(this, "Please input the letter 'T' or 'H' or 'Q' or 'F'");
 			}
@@ -222,6 +228,7 @@ public class Race extends JFrame {
 	private boolean findWinner() {
 		for (Racer r : racerList) {
 			if (r.getX() > finishX)
+				r.isWinner = true;
 				return true;
 		}
 		return false;
