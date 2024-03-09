@@ -227,9 +227,10 @@ public class Race extends JFrame {
 	 */
 	private boolean findWinner() {
 		for (Racer r : racerList) {
-			if (r.getX() > finishX)
+			if (r.getX() > finishX){
 				r.isWinner = true;
 				return true;
+			}
 		}
 		return false;
 	}

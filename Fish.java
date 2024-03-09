@@ -10,6 +10,7 @@ public class Fish extends Racer
 {
 	private int speed;
 	private Random rand;
+    private double move = 0;
 
    /** Default Constructor: calls Racer default constructor
    */
@@ -34,30 +35,11 @@ public class Fish extends Racer
    *   Fish move characteristics: "wavy"
    *      
    */
-   public void move( )
-   {
-     int move =  rand.nextInt( 100 )  + 1;
-     int directionChange = rand.nextInt(4);
-     int distance = rand.nextInt(10) + 1;
-     if ( move < speed )
-       switch(directionChange){
-        case 0: //move right
-            setX(getX() + distance);
-            break;
-        case 1: // for moving left, but it doesn't make sense so we don't want that
-            break;
-        case 2: // move up
-            if(distance < 7){  //this is to limit how chaotic the fish moves
-                setY(getY() - distance);
-            }
-            break;
-        case 3: // move down
-            if(distance < 7){  //this is also to limit how chaotic the fish moves
-                setY(getY() + distance);
-            }
-            break;
-
-       }
+  
+   public void move(){
+    setX(getX() + 1); // move the fish forward
+    setY((int) Math.round(Math.sin(move * 50)) + getY()); // create a wave-like motion
+    move += 2; // increment the movement 
    }
 
    /** draw: draws the Fish at current (x, y) coordinate
@@ -72,51 +54,8 @@ public class Fish extends Racer
         morph(g);
       }
      
-     //tail
-     g.setColor(new Color(140, 90, 0)); //darker brown
-     g.fillArc(startX - 40, startY, 40, 40, 40, 30);
-
-
-
-     //body
-     g.setColor( new Color( 180, 64, 0 ) ); // brown
-     g.fillOval( startX - 30, startY, 15,25);
-     g.setColor( new Color( 180, 130, 0 ) ); // lighter brown for stomache 
-     g.fillOval( startX - 28, startY + 6, 10,16);
-     
-    //arms
-    g.setColor(new Color(100, 100, 50)); //darker brown
-    g.fillOval(startX - 21, startY + 6, 5, 10);
-    g.fillOval(startX - 29, startY + 6, 5, 10);
-
-
-
-
-     //head
-     g.setColor( new Color( 180, 64, 0 ) ); // brown
-     g.fillOval( startX - 29, startY - 7,  13, 13);
-
-     //eyes
-     g.setColor(new Color(0, 0, 0)); //black
-     g.fillOval(startX - 26, startY - 3, 3, 3);
-     g.fillOval(startX - 20, startY - 3, 3, 3);
-
-
-     //ears
-     g.setColor( new Color( 180, 64, 0 ) ); // brown
-     g.fillArc(startX - 30, startY - 10, 15, 15, 115, 40);
-     g.fillArc(startX - 30, startY - 10, 15, 15, 20, 40);
-
-     
-    //feet
-    g.setColor( new Color( 110, 64, 0 ) ); // brown
-    g.fillOval( startX - 29, startY + 20,  7, 6 );
-    g.fillOval( startX - 20, startY + 20, 7, 6 );
-
-     
-
-
-
+      g.setColor(Color.BLUE);
+      g.fillOval(startX, startY, 10, 10);
 
    }
    
