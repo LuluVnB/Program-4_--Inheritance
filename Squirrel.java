@@ -38,20 +38,23 @@ public class Squirrel extends Racer
    {
      int move =  rand.nextInt( 100 )  + 1;
      int directionChange = rand.nextInt(4);
-     int distance = rand.nextInt(5) + 1;
+     int distance = rand.nextInt(10) + 1;
      if ( move < speed )
        switch(directionChange){
         case 0: //move right
             setX(getX() + distance);
             break;
-        case 1: //move left
-            setX(getX() - distance);
+        case 1: // for moving left, but it doesn't make sense so we don't want that
             break;
         case 2: // move up
-            setY(getY() - distance);
+            if(distance < 7){
+                setY(getY() - distance);
+            }
             break;
         case 3: // move down
-            setY(getY() + distance);
+            if(distance < 7){
+                setY(getY() + distance);
+            }
             break;
 
        }
@@ -83,7 +86,7 @@ public class Squirrel extends Racer
    }
    
    private void setRandAndSpeed( ) {
-      // percentage of time (between 90 - 99%) that this tortoise moves each turn
+      // percentage of time (between 90 - 99%) that this squirrel moves each turn
       rand = new Random( );
       speed = rand.nextInt( 10 ) + 90;
    }

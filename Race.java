@@ -71,7 +71,7 @@ public class Race extends JFrame {
 			 * 	increment yPos by the value of the 
 			 * 	constant local variable RACER_SPACE
 			 * 
-			 * If input is anything other than 'T','t','H', or 'h', 
+			 * If input is anything other than 'T','t','H', or 'h', 'Q', 'q', 'F', 'f' 
 			 * 	pop up an error dialog box
 			 * A sample method call for the output dialog box is :
 			 * 	JOptionPane.showMessageDialog( this, "Message" );
@@ -91,13 +91,14 @@ public class Race extends JFrame {
 					racerList.add(hare);
 					yPos += RACER_SPACE;
 					break;
-				case 'S':
-				case 's':
+				case 'Q':
+				case 'q':
 					Squirrel squirrel = new Squirrel("Squirrel", START_LINE, yPos);
 					racerList.add(squirrel);
 					yPos += RACER_SPACE;
+					break;
 				default:
-					JOptionPane.showMessageDialog(this, "Please input the letter 'T' or 'H'");
+					JOptionPane.showMessageDialog(this, "Please input the letter 'T' or 'H' or 'Q' or 'F'");
 			}
 
 				
