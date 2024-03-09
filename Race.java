@@ -78,6 +78,22 @@ public class Race extends JFrame {
 			 * 	
 			 */
 			// write your switch statement here
+			switch(input){
+				case 'T':
+				case 't':
+					Tortoise tortoise = new Tortoise("Tortoise", START_LINE, yPos);
+					racerList.add(tortoise);
+					yPos += RACER_SPACE;
+					break;
+				case 'H':
+				case 'h':
+					Hare hare = new Hare("Hare", START_LINE, yPos);
+					racerList.add(hare);
+					yPos += RACER_SPACE;
+					break;
+				default:
+					JOptionPane.showMessageDialog(this, "Please input the letter 'T' or 'H'");
+			}
 
 				
 			/** end of student code, Part 1 */
@@ -118,6 +134,10 @@ public class Race extends JFrame {
 				 * 		the paint method
 				 */
 				// student code goes here
+				for(Racer racer : racerList){
+					racer.move();
+					racer.draw(g);
+				}
 
 
 				/** end of student code, part 2 */
@@ -135,7 +155,9 @@ public class Race extends JFrame {
 				 * 		passed to this paint method
 				 */
 				// student code goes here
-
+				for(Racer racer : racerList){
+					racer.draw(g);
+				}
 
 				/** end of student code, part 3 */
 			}
