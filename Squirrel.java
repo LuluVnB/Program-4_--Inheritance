@@ -105,6 +105,10 @@ public class Squirrel extends Racer
      g.fillArc(startX - 30, startY - 10, 15, 15, 20, 40);
 
      
+    //feet
+    g.setColor( new Color( 110, 64, 0 ) ); // brown
+    g.fillOval( startX - 29, startY + 20,  7, 6 );
+    g.fillOval( startX - 20, startY + 20, 7, 6 );
 
      
 
@@ -113,10 +117,6 @@ public class Squirrel extends Racer
      //flatten bottom
     //   g.clearRect( startX - 30, startY + 11, 35, 4 );
 
-     //feet
-    //  g.setColor( new Color( 34, 139, 34 ) );  // brown
-    //  g.fillOval( startX - 27, startY + 10,  1, 1 );
-    //  g.fillOval( startX - 13, startY + 10, 1, 1 );
    }
    
    private void setRandAndSpeed( ) {
