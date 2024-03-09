@@ -201,7 +201,7 @@ public class Race extends JFrame {
 	 */
 	private char getRacer() {
 		String input = JOptionPane.showInputDialog(this, "Enter a racer:"
-				+ "\nt for Tortoise, h for hare," + "\nor s to start the race");
+				+ "\nt for Tortoise, h for hare, q for squirrel, f for fish" + "\nor s to start the race");
 		if (input == null) {
 			System.out.println("Exiting");
 			System.exit(0);

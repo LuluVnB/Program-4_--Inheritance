@@ -31,14 +31,30 @@ public class Squirrel extends Racer
    }
 
    /** move:  calculates the new x position for the racer
-   *   Squirrel move characteristics: "slow & steady wins the race"
-   *      increment x by 1 most of the time
+   *   Squirrel move characteristics: "speedy and erratic"
+   *      random direction movements (up, left, right)
    */
    public void move( )
    {
      int move =  rand.nextInt( 100 )  + 1;
+     int directionChange = rand.nextInt(4);
+     int distance = rand.nextInt(5) + 1;
      if ( move < speed )
-       setX( getX( ) + 1 );
+       switch(directionChange){
+        case 0: //move right
+            setX(getX() + distance);
+            break;
+        case 1: //move left
+            setX(getX() - distance);
+            break;
+        case 2: // move up
+            setY(getY() - distance);
+            break;
+        case 3: // move down
+            setY(getY() + distance);
+            break;
+
+       }
    }
 
    /** draw: draws the Squirrel at current (x, y) coordinate
