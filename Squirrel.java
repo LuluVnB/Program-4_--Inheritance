@@ -68,13 +68,13 @@ public class Squirrel extends Racer
      int startX = getX( );
      int startY = getY( );
      
-     	g.setColor( new Color( 200, 64, 0 ) ); // brown
+        g.setColor( new Color( 200, 64, 0 ) ); // brown
 
      //body
-     g.fillOval( startX - 30, startY, 10,20  );
+     g.fillOval( startX - 30, startY, 10,20);
 
      //head
-    //  g.fillOval( startX - 10, startY + 5,  15, 10 );
+     g.fillOval( startX - 30, startY - 5,  10, 10);
      
 
      //flatten bottom
