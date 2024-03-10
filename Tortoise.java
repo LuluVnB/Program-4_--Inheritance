@@ -3,6 +3,7 @@
 */
 
 import java.awt.Graphics;
+import java.awt.Polygon;
 import java.awt.Color;
 import java.util.Random;
 
@@ -61,6 +62,8 @@ public class Tortoise extends Racer
      //head
      g.fillOval( startX - 10, startY + 5,  15, 10 );
 
+
+
      //flatten bottom
       g.clearRect( startX - 30, startY + 11, 35, 4 );
 
@@ -77,6 +80,33 @@ public class Tortoise extends Racer
    }
 
    public void morph(Graphics g){
-    g.fillOval(0, 0, 0, 0);
+    int startX = getX( );
+    int startY = getY( );
+    
+      g.setColor( new Color( 34, 139, 34 ) ); // dark green
+
+    //body
+    g.fillOval( startX - 30, startY, 25, 15 );
+
+    //head
+    g.fillOval( startX - 10, startY + 5,  15, 10 );
+    g.setColor(Color.pink);
+
+
+    //party hat
+    g.setColor(Color.pink);
+
+    // g.fillPolygon(new Polygon(new int[] {startX - 33, startX + 37, startX + 43}, new int[] {57, 37, 57}, 3));
+    g.fillPolygon(new Polygon(new int[] {getX() - 4, getX(), getX() + 4 }, new int[] {57, 37, 57}, 3));
+    g.setColor(new Color(0, 100, 0));
+    g.fillOval(getX() - 3, 36, 7, 7);
+
+    //flatten bottom
+     g.clearRect( startX - 30, startY + 11, 35, 4 );
+
+    //feet
+    g.setColor( new Color( 34, 139, 34 ) );  // brown
+    g.fillOval( startX - 27, startY + 10,  5, 5 );
+    g.fillOval( startX - 13, startY + 10, 5, 5 );
    }
 }
