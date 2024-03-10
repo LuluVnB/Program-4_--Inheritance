@@ -54,8 +54,24 @@ public class Fish extends Racer
         morph(g);
       }
      
-      g.setColor(Color.BLUE);
-      g.fillOval(startX, startY, 10, 10);
+
+      //fins
+      g.setColor(new Color(230, 84, 0));
+      g.fillOval(startX - 23, startY, 7, 20);
+
+      //body
+      g.fillOval(startX - 35, startY + 5, 30, 10);
+
+      //eye
+      g.setColor(Color.black);
+      g.fillOval(startX - 10, startY + 8, 3, 3);
+
+
+      //stripes
+      g.setColor(Color.white);
+      g.fillArc(startX - 29, startY + 5, 6, 10, 90, 180);
+      g.fillArc(startX - 22, startY + 5, 6, 10, 90, 180);
+      g.fillArc(startX - 16, startY + 5, 6, 10, 90, 180);
 
    }
    
