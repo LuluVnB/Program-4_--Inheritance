@@ -52,7 +52,7 @@ public class Fish extends Racer
      
      if(this.isWinner){
         morph(g);
-      }
+      } else{
      
 
       //fins
@@ -72,6 +72,7 @@ public class Fish extends Racer
       g.fillArc(startX - 29, startY + 5, 6, 10, 90, 180);
       g.fillArc(startX - 22, startY + 5, 6, 10, 90, 180);
       g.fillArc(startX - 16, startY + 5, 6, 10, 90, 180);
+      }
 
    }
    
@@ -82,6 +83,29 @@ public class Fish extends Racer
    }
 
    public void morph(Graphics g){
-    g.fillOval(0, 0, 0, 0);
+    int startX = getX( );
+    int startY = getY( );
+
+
+     //fins
+     g.setColor(Color.blue);
+    
+     g.fillOval(startX - 23, startY, 7, 20);
+
+     //body
+     g.fillOval(startX - 35, startY + 5, 30, 10);
+
+     //eye
+     g.setColor(Color.green);
+     g.fillOval(startX - 10, startY + 8, 3, 3);
+
+
+     //stripes
+     g.setColor(Color.red);
+     g.fillArc(startX - 29, startY + 5, 6, 10, 90, 180);
+     g.setColor(Color.orange);
+     g.fillArc(startX - 22, startY + 5, 6, 10, 90, 180);
+     g.setColor(Color.yellow);
+     g.fillArc(startX - 16, startY + 5, 6, 10, 90, 180);
    }
 }

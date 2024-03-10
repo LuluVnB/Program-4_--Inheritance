@@ -59,8 +59,7 @@ public class Hare extends Racer
 
      if(this.isWinner){
       morph(g);
-    }
-
+    } else{
      // tail
      g.setColor( Color.LIGHT_GRAY );
      g.fillOval( startX - 37, startY + 8,  12, 12 ) ;
@@ -75,10 +74,34 @@ public class Hare extends Racer
 
      //flatten bottom
      g.clearRect( startX - 37, startY + 15, 32, 5 );
+    }
    }
 
    //when racer wins, morph racer
    public void morph(Graphics g){
-    g.fillOval(0, 0, 0, 0);
+    int startY = getY( );
+    int startX = getX( );
+
+    //balloon
+    g.setColor(Color.black);
+    g.fillRect(startX - 7, startY - 30, 1, 30);
+    g.setColor(new Color(75,0,130));
+    g.fillOval(startX - 15, startY - 35, 19, 19);
+
+
+    // tail
+    g.setColor( Color.LIGHT_GRAY );
+    g.fillOval( startX - 37, startY + 8,  12, 12 ) ;
+
+    //body
+    g.setColor( Color.GRAY );
+    g.fillOval( startX - 30, startY,  20,  20 );
+
+    //head
+    g.fillOval( startX - 13, startY + 2, 13, 8 );
+    g.fillOval( startX - 13, startY - 8, 8, 28 );
+
+    //flatten bottom
+    g.clearRect( startX - 37, startY + 15, 32, 5 );
    }
 }
