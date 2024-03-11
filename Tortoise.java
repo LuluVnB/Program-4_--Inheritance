@@ -14,6 +14,11 @@ public class Tortoise extends Racer
 
    /** Default Constructor: calls Racer default constructor
    */
+
+   public String getInfo(){
+    return "Program 4, Gian Paraguya";
+  }
+
    public Tortoise( )
    {
      super( );

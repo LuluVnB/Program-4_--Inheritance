@@ -10,7 +10,11 @@ public class Fish extends Racer
 {
 	private int speed;
 	private Random rand;
-    private double move = 0;
+  private double move = 0;
+  public String getInfo(){
+    return "Program 4, Gian Paraguya";
+  }
+  
 
    /** Default Constructor: calls Racer default constructor
    */

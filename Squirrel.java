@@ -11,6 +11,10 @@ public class Squirrel extends Racer
 	private int speed;
 	private Random rand;
 
+  public String getInfo(){
+    return "Program 4, Gian Paraguya";
+  }
+
 
    /** Default Constructor: calls Racer default constructor
    */

@@ -10,6 +10,11 @@ public class Race extends JFrame {
 	private boolean raceIsOn = false;
 	private RacePanel racePanel;
 
+	public String getInfo(){
+		return "Program 4, Gian Paraguya";
+	  }
+	
+
 	/**
 	 * Constructor instantiates list to track racers sets up GUI components
 	 */

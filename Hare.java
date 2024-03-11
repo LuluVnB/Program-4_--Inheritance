@@ -8,8 +8,14 @@ import java.util.Random;
 
 public class Hare extends Racer
 {
+
+  public String getInfo(){
+    return "Program 4, Gian Paraguya";
+  }
+
    /** Default Constructor: calls Racer default constructor
    */
+  
    public Hare( )
    {
      super( );

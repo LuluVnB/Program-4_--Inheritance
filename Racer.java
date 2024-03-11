@@ -10,9 +10,16 @@ public abstract class Racer {
 	private int y;			// y position
 	public boolean isWinner;
 
+	public String getInfo(){
+		return "Program 4, Gian Paraguya";
+	  }
+	
+
 	/** default constructor
 	 *  Sets ID to blank
 	 */
+
+
 	public Racer() {
 		ID = "";
 		isWinner = false;
